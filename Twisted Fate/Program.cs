@@ -83,10 +83,6 @@ namespace TwistedFate
                 new MenuItem("SelectRed", "Select Red").SetValue(new KeyBind("T".ToCharArray()[0], KeyBindType.Press)));
             Config.AddSubMenu(w);
 
-            var r = new Menu("R - Destiny", "R");
-            r.AddItem(new MenuItem("AutoY", "Select yellow card after R").SetValue(true));
-            Config.AddSubMenu(r);
-
             var misc = new Menu("Misc", "Misc");
             misc.AddItem(new MenuItem("PingLH", "Ping low health enemies (Only local)").SetValue(true));
             Config.AddSubMenu(misc);
