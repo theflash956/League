@@ -99,8 +99,6 @@ namespace TwistedFate
             /*Drawing*/
             var Drawings = new Menu("Drawings", "Drawings");
             Drawings.AddItem(new MenuItem("Qcircle", "Q Range").SetValue(new Circle(true, Color.FromArgb(100,255,0,255))));
-            Drawings.AddItem(new MenuItem("Rcircle", "R Range").SetValue(new Circle(true, Color.FromArgb(100, 255, 255, 255))));
-            Drawings.AddItem(new MenuItem("Rcircle2", "R Range (minimap)").SetValue(new Circle(true, Color.FromArgb(255, 255, 255, 255))));
             Drawings.AddItem(dmgAfterComboItem);
             Config.AddSubMenu(Drawings);
 
@@ -267,7 +265,7 @@ namespace TwistedFate
         private static void Game_OnGameUpdate(EventArgs args)
         {
             if (Config.Item("PingLH").GetValue<bool>())
-                foreach (var enemy in ObjectManager.Get<Obj_AI_Hero>().Where(h => ObjectManager.Player.Spellbook.CanUseSpell(SpellSlot.R) == SpellState.Ready && h.IsValidTarget() && ComboDamage(h) > h.Health))
+                foreach (var enemy in ObjectManager.Get<Obj_AI_Hero>().Where(h => ObjectManager.Player.Spellbook.CanUseSpell(SpellSlot.) == SpellState.Ready && h.IsValidTarget() && ComboDamage(h) > h.Health))
                 {
                     Ping(enemy.Position.To2D());
                 }
